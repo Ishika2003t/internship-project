@@ -1,0 +1,212 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    font-family: 'Arial', sans-serif;
+}
+/* Background Image Styling */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bg.jpg') no-repeat center center/cover;
+    z-index: -3;
+}
+.foreground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Adjust height as needed */
+    background: url('trees.png') no-repeat center bottom/cover;
+    z-index: -1;
+}
+
+/* Falling Leaves Styling */
+.leaves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index:-2;
+}
+
+.leaf {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* Container Styling */
+.login-container {
+    /* background: rgba(255, 255, 255, 0.9); */
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    z-index:1;
+}
+
+/* Title Styling */
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Input Styling */
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Label Styling */
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+/* Focused Input Styling */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+    color: #ff7e5f;
+}
+
+/* Focused Input Border Styling */
+.input-group input:focus {
+    border-color: #ff7e5f;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #601705;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #feb47b;
+}
+
+/* Extra Options Styling */
+.extra-options {
+    margin-top: 20px;
+}
+
+.extra-options a {
+    color: #601705;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.extra-options a:hover {
+    color: #feb47b;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 10px;
+    }
+    
+    .input-group input, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+}
+/* Cycling Girl Styling */
+.cycling-girl {
+    position: absolute;
+    bottom: 100px; /* Adjust the vertical position as needed */
+    left: -100px; /* Initial position off-screen */
+    
+    height: 50%;
+    z-index: -2;
+    transition: transform 0.5s; /* Smooth transition for flipping */
+}
+
+@keyframes cycleLeftRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
