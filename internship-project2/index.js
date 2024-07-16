@@ -1,10 +1,20 @@
 let counter = 1;
+Array.from(document.querySelectorAll("input[type=radio]")).forEach((item, index) => {
+    item.addEventListener("click", () => {
+        counter = index + 1; // Update the counter to match the clicked radio button
+        document.getElementById('radio' + counter).checked = true;
+    updateIndicators(counter);
+    updateCaption(counter);
+ // Update the slide to reflect the current counter
+    });
+});
+
 function updateIndicators(counter) {
-    document.querySelectorAll('.navigation-auto div').forEach((indicator, index) => {
+    Array.from(document.querySelector('div.navigation-manual').children).forEach((indicator, index) => {
         if (index === counter - 1) {
-            indicator.style.opacity = 1;
+            indicator.style.backgroundColor= "white";
         } else {
-            indicator.style.opacity = 0;
+            indicator.style.backgroundColor="transparent";
         }
     });
 }
@@ -19,6 +29,7 @@ document.querySelector('.prev').addEventListener('click', () => {
 });
 
 function nextSlide() {
+    
     const slides = document.querySelectorAll('.slide');
     counter++;
     if (counter > slides.length) {
