@@ -1,4 +1,5 @@
 /* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -30,14 +31,20 @@ nav ul li a {
     font-weight: bold;
 }
 
-.product {
+.product-slider {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
+    overflow: hidden;
     max-width: 1200px;
-    padding: 1rem;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.product-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -48,23 +55,29 @@ nav ul li a {
 }
 
 .product-details {
-    max-width: 600px;
-    margin-left: 2rem;
+    padding: 1rem;
+    text-align: center;
 }
 
 .product-name {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.product-description {
-    font-size: 1rem;
+.product-brand {
+    font-size: 1.2rem;
+    color: #666;
     margin-bottom: 1rem;
 }
 
 .product-price {
     font-size: 1.5rem;
     color: #b12704;
+    margin-bottom: 1rem;
+}
+
+.product-rating {
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -81,27 +94,22 @@ nav ul li a {
 .add-to-cart:hover {
     background-color: #e68a00;
 }
-/* Add this to the bottom of your styles.css */
 
-@media (max-width: 768px) {
-    .product {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-details {
-        margin-left: 0;
-        text-align: center;
-    }
-}
-/* Add this to your styles.css */
-
-.product-image img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
-.add-to-cart:hover {
-    background-color: #e68a00;
-    transform: translateY(-2px);
+.slider-controls button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.slider-controls button:hover {
+    background-color: #555;
 }

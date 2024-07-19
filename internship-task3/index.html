@@ -18,17 +18,39 @@
     </header>
     
     <main>
-        <div class="product">
-            <div class="product-image">
-                <img src="product.jpg" alt="Product Image">
+        <div class="product-slider">
+            <div class="product-slide">
+                <div class="product-image">
+                    <img src="assets\adidas-brown.jpg" alt="Product 1 Image">
+                </div>
+                <div class="product-details">
+                    <h1 class="product-name">Adidas brown shoes</h1>
+                    <p class="product-brand">Adidas</p>
+                    <p class="product-price">$40</p>
+                    <p class="product-rating">★★★★☆</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
-            <div class="product-details">
-                <h1 class="product-name">Product Name</h1>
-                <p class="product-description">This is a great product that does amazing things.</p>
-                <p class="product-price">$99.99</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <div class="product-slide">
+                <div class="product-image">
+                    <img src="assets\darkbrown.jpg" alt="Product 2 Image">
+                </div>
+                <div class="product-details">
+                    <h1 class="product-name">Adidas dark brown</h1>
+                    <p class="product-brand">Adidas</p>
+                    <p class="product-price">$40</p>
+                    <p class="product-rating">★★★☆☆</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
+            <!-- Add more product slides as needed -->
+        </div>
+        <div class="slider-controls">
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
